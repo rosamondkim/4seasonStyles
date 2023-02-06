@@ -1,7 +1,12 @@
+import Weather from 'components/Weather';
 import React from 'react';
 
 function App() {
-  return <div>4seasonStyle</div>;
+  return (
+    <div>
+      <Weather />
+    </div>
+  );
 }
 
 export default App;
