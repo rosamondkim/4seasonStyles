@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useCurrentLocation from 'hooks/useCurrentLocation';
 import axios from 'axios';
-import WeatherDescription from './WeatherDesctiption';
+import WeatherDescription from './WeatherDescription';
 const Weather = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [weatherInfo, setWeatherInfo] = useState({});
