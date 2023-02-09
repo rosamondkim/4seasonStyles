@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const Address = () => {
   const { location, error } = useCurrentLocation();
-  const [address, setAddress] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [address, setAddress] = useState<String>('');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const REACT_APP_KAKAO_REST_API = process.env.REACT_APP_KAKAO_REST_API;
   useEffect(() => {
@@ -38,7 +38,7 @@ const Address = () => {
     alterAddress();
   }, [location]);
 
-  return isLoading ? <span>응응</span> : <div>{address}</div>;
+  return isLoading ? <span>주소정보 받아오는중</span> : <div>{address}</div>;
 };
 
 export default Address;
