@@ -3,12 +3,11 @@ import useCurrentLocation from 'hooks/useCurrentLocation';
 import axios from 'axios';
 import WeatherDescription from './WeatherDescription';
 const Weather = () => {
+  const OPEN_WEATHER_MAP_API = process.env.REACT_APP_OPEN_WEATHER_MAP_API;
+
+  const { location, error } = useCurrentLocation();
   const [isLoading, setIsLoading] = useState(true);
   const [weatherInfo, setWeatherInfo] = useState({});
-  // const OPEN_WEATHER_MAP_API = process.env.REACT_APP_OPEN_WEATHER_MAP_API;
-  const OPEN_WEATHER_MAP_API = '7b2cd414656e53bd65ccf81378f4d509';
-  const { location, error } = useCurrentLocation();
-
 
   useEffect(() => {
     if (error) {
@@ -39,7 +38,7 @@ const Weather = () => {
     };
     getFetch();
   }, [location]);
-  console.log(weatherInfo);
+
   return isLoading ? (
     <span>날씨정보 못받아옴</span>
   ) : (
