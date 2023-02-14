@@ -1,4 +1,8 @@
-const WeatherDescription = {
+interface WeatherInterface {
+  [prop: number]: any;
+}
+
+const WeatherDescription: WeatherInterface = {
   201: { title: '가벼운 비를 동반한 천둥구름' },
   200: { title: '비를 동반한 천둥구름' },
   202: { title: '폭우를 동반한 천둥구름' },
