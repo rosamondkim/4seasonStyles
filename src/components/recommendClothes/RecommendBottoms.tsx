@@ -4,7 +4,7 @@ interface Props {
   temp: number;
 }
 
-const RecommendClothes: React.FC<Props> = ({ temp }) => {
+const RecommendBottoms: React.FC<Props> = ({ temp }) => {
   let clothing = '';
   if (temp >= 28) {
     clothing = '덥다더워 민소매고고';
@@ -29,4 +29,4 @@ const RecommendClothes: React.FC<Props> = ({ temp }) => {
   return <div>{clothing}</div>;
 };
 
-export default RecommendClothes;
+export default RecommendBottoms;
