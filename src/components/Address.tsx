@@ -16,8 +16,8 @@ const Address = () => {
       return;
     }
     const alterAddress = () => {
-      let x = location.lon;
-      let y = location.lat;
+      let x: number = location.lon;
+      let y: number = location.lat;
       if (x && y) {
         axios
           .get(
@@ -29,7 +29,7 @@ const Address = () => {
             },
           )
           .then((result) => {
-            let address = result.data.documents[0].address_name;
+            let address: string = result.data.documents[0].address_name;
             setAddress(address);
             setIsLoading(false);
           });
