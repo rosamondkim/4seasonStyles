@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useCurrentLocation from 'hooks/useCurrentLocation';
 import axios, { AxiosResponse } from 'axios';
 import WeatherDescription from './WeatherDescription';
-import RecommendClothes from './recommendClothes/RecommendClothes';
+import RecommendTops from './recommendClothes/RecommendTops';
 
 interface WeatherInfo {
   weather: string;
@@ -41,19 +41,19 @@ const Weather = () => {
           `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${OPEN_WEATHER_MAP_API}&units=metric`,
         )
         .then(
-          (res: AxiosResponse) => updateWeatherInfo(res.data.main),
+          (res: AxiosResponse) => updateWeatherInfo(res.data),
           (res: AxiosResponse) => setIsLoading(false),
         );
     };
 
-    const updateWeatherInfo = (res: any) => {
+    const updateWeatherInfo = (res: Request) => {
       console.log(res);
       setWeatherInfo({
-        weather: WeatherDescription[res.weather[0].id].title,
         temp: res.main.temp.toFixed(1),
         tempMax: res.main.temp_max.toFixed(1),
         tempMin: res.main.temp_min.toFixed(1),
         humidity: res.main.humidity,
+        weather: WeatherDescription[res.weather[0].id].title,
       });
     };
     getFetch();
@@ -69,7 +69,7 @@ const Weather = () => {
       <div>최저기온 : {weatherInfo.tempMin}</div>
       <div>습도 : {weatherInfo.humidity}</div>
       <div>
-        오늘의 룩 추천 : <RecommendClothes temp={weatherInfo.temp} />
+        오늘의 룩 추천 : <RecommendTops temp={weatherInfo.temp} />
       </div>
     </div>
   );
