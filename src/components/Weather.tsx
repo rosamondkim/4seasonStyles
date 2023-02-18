@@ -46,7 +46,8 @@ const Weather = () => {
         );
     };
 
-    const updateWeatherInfo = (res: Request) => {
+    const updateWeatherInfo = (res: any) => {
+      // 이 res 타입 수정해야함
       console.log(res);
       setWeatherInfo({
         temp: res.main.temp.toFixed(1),
