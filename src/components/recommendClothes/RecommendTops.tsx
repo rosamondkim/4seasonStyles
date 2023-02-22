@@ -19,7 +19,7 @@ const RecommendTops: React.FC<Props> = ({ temp }) => {
   } else if (temp >= 10) {
     clothing = '따뜻한 니트 및 후드티';
   } else if (temp >= -3) {
-    clothing = '기모가 들어간 맨투맨 및 따뜻한 니트';
+    clothing = '기모가 들어간 맨투맨과 히트텍';
   } else {
     clothing = '기모가 들어간 맨투맨과 니트 등 여러겹을 입으세요';
   }

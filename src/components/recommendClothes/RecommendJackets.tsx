@@ -4,31 +4,29 @@ interface Props {
   temp: number;
 }
 
-const RecommendJackets
-: React.FC<Props> = ({ temp }) => {
+const RecommendJackets: React.FC<Props> = ({ temp }) => {
   let clothing = '';
   if (temp >= 28) {
-    clothing = '덥다더워 민소매고고';
+    clothing = 'x';
   } else if (temp >= 23) {
-    clothing = '반팔 정도 입음 댈듯';
+    clothing = 'x';
   } else if (temp >= 20) {
-    clothing = '긴팔이나 반팔니트 입어라';
+    clothing = '얇은 가디건 및 걸칠 셔츠';
   } else if (temp >= 17) {
-    clothing = '니트같은거';
+    clothing = '얇은 가디건';
   } else if (temp >= 12) {
-    clothing = '자켓, 가디건 걸쳐';
+    clothing = '자켓, 니트가디건';
   } else if (temp >= 10) {
-    clothing = '트렌치의 계절이 왔따';
+    clothing = '트렌치, 가죽자켓';
   } else if (temp >= 6) {
-    clothing = '아직까진 얼죽코';
+    clothing = '코트';
   } else if (temp >= -3) {
     clothing = '숏패딩';
   } else {
-    clothing = '롱패딩입자';
+    clothing = '롱패딩';
   }
 
   return <div>{clothing}</div>;
 };
 
-export default RecommendJackets
-;
+export default RecommendJackets;

@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+// 622번까지 우산챙기기
 
-const rainyDay = () => {
-  return (
-    <div>rainyDay</div>
-  )
+interface Props {
+  WeatherNumber: number;
 }
 
-export default rainyDay
+const rainyDay: React.FC<Props> = ({ WeatherNumber }) => {
+  if (WeatherNumber <= 622) {
+    return <div>우산을 챙기세요</div>;
+  } else {
+    return <div>비 소식이 없습니다.</div>;
+  }
+};
+
+export default rainyDay;
