@@ -1,5 +1,7 @@
 interface WeatherInterface {
-  [prop: number]: any;
+  [prop: number]: {
+    title: string;
+  };
 }
 
 const WeatherDescription: WeatherInterface = {

@@ -1,10 +1,13 @@
+import Weather from 'components/Weather';
 import React from 'react';
 import styled from 'styled-components';
 
 const Home = () => {
   return (
     <MainStyle>
-      <WhiteWrapper>asdsada</WhiteWrapper>
+      <WhiteWrapper>
+        <Weather />
+      </WhiteWrapper>
     </MainStyle>
   );
 };

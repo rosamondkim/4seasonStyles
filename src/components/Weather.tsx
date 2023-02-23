@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import useCurrentLocation from 'hooks/useCurrentLocation';
+import { useEffect, useState } from 'react';
 import axios, { AxiosResponse } from 'axios';
-import WeatherDescription from './WeatherDescription';
+import styled from 'styled-components';
+import LOGO from '../assets/icons/weather/201.png';
+import useCurrentLocation from 'hooks/useCurrentLocation';
+import WeatherDescription from '../utils/WeatherDescription';
+import WeatherImageMap from 'utils/WeatherImageMap';
+
 import RecommendTops from './recommendClothes/RecommendTops';
 import RecommendBottoms from './recommendClothes/RecommendBottoms';
 import RecommendJackets from './recommendClothes/RecommendJackets';
 import RainyDay from './recommendClothes/RainyDay';
 
 interface WeatherInfo {
+  logo: string;
   weather: string;
   temp: number;
   feels: number;
@@ -23,6 +28,7 @@ const Weather = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const initWeatherInfo = {
+    logo: '',
     weather: '',
     temp: 0,
     feels: 0,
@@ -58,6 +64,7 @@ const Weather = () => {
       // 이 res 타입 수정해야함
       setIsLoading(false);
       setWeatherInfo({
+        logo: WeatherImageMap[res.weather[0].id],
         temp: res.main.temp.toFixed(1),
         feels: res.main.feels_like.toFixed(1),
         tempMax: res.main.temp_max.toFixed(1),
@@ -94,8 +101,14 @@ const Weather = () => {
       <div>
         <RainyDay WeatherNumber={weatherInfo.umbrella} />
       </div>
+      <WeatherIcon src={weatherInfo.logo} alt="날씨 로고"></WeatherIcon>
     </div>
   );
 };
 
 export default Weather;
+
+const WeatherIcon = styled.img`
+  width: 130px;
+  height: 130px;
+`;
