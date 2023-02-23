@@ -3,13 +3,18 @@ import useCurrentLocation from 'hooks/useCurrentLocation';
 import axios, { AxiosResponse } from 'axios';
 import WeatherDescription from './WeatherDescription';
 import RecommendTops from './recommendClothes/RecommendTops';
+import RecommendBottoms from './recommendClothes/RecommendBottoms';
+import RecommendJackets from './recommendClothes/RecommendJackets';
+import RainyDay from './recommendClothes/RainyDay';
 
 interface WeatherInfo {
   weather: string;
   temp: number;
+  feels: number;
   tempMax: number;
   tempMin: number;
   humidity: number;
+  umbrella: number;
 }
 
 const Weather = () => {
@@ -20,10 +25,12 @@ const Weather = () => {
   const initWeatherInfo = {
     weather: '',
     temp: 0,
+    feels: 0,
     tempMax: 0,
     tempMin: 0,
     humidity: 0,
     windSpeed: 0,
+    umbrella: 0,
   };
 
   const [weatherInfo, setWeatherInfo] = useState<WeatherInfo>(initWeatherInfo);
@@ -47,14 +54,17 @@ const Weather = () => {
     };
 
     const updateWeatherInfo = (res: any) => {
-      // 이 res 타입 수정해야함
       console.log(res);
+      // 이 res 타입 수정해야함
+      setIsLoading(false);
       setWeatherInfo({
         temp: res.main.temp.toFixed(1),
+        feels: res.main.feels_like.toFixed(1),
         tempMax: res.main.temp_max.toFixed(1),
         tempMin: res.main.temp_min.toFixed(1),
         humidity: res.main.humidity,
         weather: WeatherDescription[res.weather[0].id].title,
+        umbrella: res.weather[0].id,
       });
     };
     getFetch();
@@ -65,12 +75,24 @@ const Weather = () => {
   ) : (
     <div>
       <div>날씨 : {weatherInfo.weather}</div>
+      <div>체감온도 : {weatherInfo.feels}</div>
       <div>기온: {weatherInfo.temp}</div>
       <div> 최고기온: {weatherInfo.tempMax}</div>
       <div>최저기온 : {weatherInfo.tempMin}</div>
       <div>습도 : {weatherInfo.humidity}</div>
+      <h1>오늘의 옷 추천 :</h1>
       <div>
-        오늘의 룩 추천 : <RecommendTops temp={weatherInfo.temp} />
+        <RecommendJackets temp={weatherInfo.temp} />
+      </div>
+      <div>
+        <RecommendTops temp={weatherInfo.temp} />
+      </div>
+      <div>
+        <RecommendBottoms temp={weatherInfo.temp} />
+      </div>
+
+      <div>
+        <RainyDay WeatherNumber={weatherInfo.umbrella} />
       </div>
     </div>
   );

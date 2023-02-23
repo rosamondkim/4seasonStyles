@@ -1,13 +1,12 @@
-import Address from 'components/Address';
-import Weather from 'components/Weather';
-
 import React from 'react';
+import Router from 'routes/Router';
+import GlobalStyle from './styles/GlobalStyle.jsx';
 
 function App() {
   return (
     <div>
-      <Address />
-      <Weather />
+      <GlobalStyle />
+      <Router />
     </div>
   );
 }
