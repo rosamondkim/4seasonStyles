@@ -5,8 +5,8 @@ interface WeatherInterface {
 }
 
 const WeatherDescription: WeatherInterface = {
-  201: { title: '가벼운 비를 동반한 천둥구름' },
   200: { title: '비를 동반한 천둥구름' },
+  201: { title: '가벼운 비를 동반한 천둥구름' },
   202: { title: '폭우를 동반한 천둥구름' },
   210: { title: '약한 천둥구름' },
   211: { title: '천둥구름' },
@@ -20,7 +20,7 @@ const WeatherDescription: WeatherInterface = {
   302: { title: '강한 안개비' },
   310: { title: '가벼운 적은비' },
   311: { title: '적은비' },
-  312: { title: '강한 적은비' },
+  312: { title: '세찬 가랑비' },
   313: { title: '소나기와 안개비' },
   314: { title: '강한 소나기와 안개비' },
   321: { title: '소나기' },
@@ -57,7 +57,7 @@ const WeatherDescription: WeatherInterface = {
   800: { title: '구름 한 점 없는 맑은 하늘' },
   801: { title: '구름이 약간 낀 하늘' },
   802: { title: '구름이 드문드문 낀 하늘' },
-  803: { title: '구름이 거의 없는 하늘' },
+  803: { title: '구름이 낀 하늘' },
   804: { title: '구름으로 뒤덮인 흐린 하늘' },
   900: { title: '토네이도' },
   901: { title: '태풍' },
