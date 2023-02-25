@@ -1,12 +1,10 @@
 :root {
   font-size: 10px;
-  --fs-sm: 12px;
-  --fs-md: 14px;
-  --fs-lg: 16px;
-  --fs-xl: 18px;
   --text-color: #000000;
   --bg-color: #ffffff;
   --main-bg-color: #89aeff;
+  --section-shadow: rgba(100, 100, 111, 0.2) 0px 0px 25px 0px;
+  --sec-border-radius: 35px;
 }
 
 .ellipsis {
