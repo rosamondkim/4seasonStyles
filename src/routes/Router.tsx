@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
-import NotFoundPage from 'pages/NotFoundPage';
-import SplashPage from 'pages/SplashPage';
-import Home from 'pages/Home';
+import NotFoundPage from 'pages/notFoundPage/NotFoundPage';
+import SplashPage from 'pages/splashPage/SplashPage';
+import Home from 'pages/mainPage/Home';
 import Map from 'components/Map';
 
 const Router = () => {
