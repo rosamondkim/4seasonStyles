@@ -1,5 +1,5 @@
 import * as S from './HomeStyle';
-import WeatherSection from 'components/section/WeatherSection';
+import WeatherSection from 'components/section/weatherSection/WeatherSection';
 const Home = () => {
   return (
     <S.MainStyle>
