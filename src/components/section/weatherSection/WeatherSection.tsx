@@ -27,7 +27,7 @@ const WeatherSection = () => {
               <Address />
             </S.AddressInfo>
             <S.WeatherDesc>{weather?.description}</S.WeatherDesc>
-            <S.Temp>{weather?.temperature}°</S.Temp>
+            <S.Temp>{weather?.temperature.toFixed(1)}°</S.Temp>
           </S.DiscWrapper>
         </S.Wrapper>
       )}
