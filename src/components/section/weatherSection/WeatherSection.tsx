@@ -1,15 +1,11 @@
 import React from 'react';
-// import * as S from './WeatherSectionStyle';
+import * as S from './WeatherSectionStyle';
 import useWeather from '../../../hooks/useWeather';
-import styled from 'styled-components';
+import Address from '../../Address';
 
-/**
- * 필요한것:
- * icon
- * 주소
- * 날씨
- * 현재기온
- */
+type WeatherIconProps = {
+  backgroundImageUrl: string;
+};
 
 const WeatherSection = () => {
   const { weather, error } = useWeather();
@@ -24,20 +20,19 @@ const WeatherSection = () => {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div>
-          <div>Temperature: {weather?.temperature}</div>
-          <div>Description: {weather?.description}</div>
-
-          <WeatherIcon src={weather?.icon} alt="날씨로고" />
-        </div>
+        <S.Wrapper>
+          <S.WeatherIcon backgroundImageUrl={weather?.icon} />
+          <S.DiscWrapper>
+            <S.AddressInfo>
+              <Address />
+            </S.AddressInfo>
+            <S.WeatherDesc>{weather?.description}</S.WeatherDesc>
+            <S.Temp>{weather?.temperature}°</S.Temp>
+          </S.DiscWrapper>
+        </S.Wrapper>
       )}
     </div>
   );
 };
 
 export default WeatherSection;
-
-const WeatherIcon = styled.img`
-  width: 50px;
-  height: 50px;
-`;
