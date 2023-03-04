@@ -4,9 +4,7 @@ const Home = () => {
   return (
     <S.MainStyle>
       <S.WhiteWrapper>
-        <S.WeatherSection>
-          <WeatherSection />
-        </S.WeatherSection>
+        <WeatherSection />
       </S.WhiteWrapper>
     </S.MainStyle>
   );
