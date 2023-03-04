@@ -6,7 +6,7 @@ import WeatherImageMap from 'utils/WeatherImageMap';
 
 interface Weather {
   feels: string;
-  temperature: number;
+  temperature: string;
   temp_max: string;
   temp_min: string;
   description: string;
@@ -44,7 +44,7 @@ function useWeather() {
 
         const weather: Weather = {
           feels: data.main.feels_like.toFixed(1),
-          temperature: data.main.temp,
+          temperature: data.main.temp.toFixed(1),
           temp_max: data.main.temp_max.toFixed(1),
           temp_min: data.main.temp_min.toFixed(1),
           icon: WeatherImageMap[data.weather[0].id],
