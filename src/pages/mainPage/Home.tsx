@@ -2,6 +2,7 @@ import * as S from './HomeStyle';
 import WeatherSection from 'components/section/weatherSection/WeatherSection';
 import useWeather from 'hooks/useWeather';
 import DetailWeatherSection from 'components/section/detailWeatherSection/DetailWeatherSection';
+import UmbrellaSection from 'components/section/umbrellaSection/UmbrellaSection';
 
 const Home = () => {
   const { weather, error } = useWeather();
@@ -20,6 +21,7 @@ const Home = () => {
           <S.WhiteWrapper>
             <WeatherSection />
             <DetailWeatherSection />
+            <UmbrellaSection />
           </S.WhiteWrapper>
         </S.MainStyle>
       )}
