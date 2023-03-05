@@ -11,13 +11,13 @@ interface WrapperProps {
   children?: ReactNode;
 }
 
-const WeatherWrapper = (props: WrapperProps) => {
-  return <WeatherWrapperDiv {...props}>{props.children}</WeatherWrapperDiv>;
+const Wrapper = (props: WrapperProps) => {
+  return <WrapperDiv {...props}>{props.children}</WrapperDiv>;
 };
 
-export default WeatherWrapper;
+export default Wrapper;
 
-export const WeatherWrapperDiv = styled.div<WrapperProps>`
+export const WrapperDiv = styled.div<WrapperProps>`
   // 모바일
   display: flex;
   justify-content: center;
@@ -39,6 +39,7 @@ export const WeatherWrapperDiv = styled.div<WrapperProps>`
   @media (min-width: 744px) {
     //패드
     padding: 1.7rem;
+
     height: ${({ heightVal }) => heightVal ?? 'auto'};
   }
   @media (min-width: 1280px) {

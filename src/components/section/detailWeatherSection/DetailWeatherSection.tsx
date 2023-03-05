@@ -1,5 +1,5 @@
 import useWeather from '../../../hooks/useWeather';
-import WeatherWrapper from 'components/WeatherWrapper';
+import Wrapper from 'components/Wrapper';
 
 const DetailWeatherSection = () => {
   const { weather, error } = useWeather();
@@ -13,12 +13,12 @@ const DetailWeatherSection = () => {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <WeatherWrapper height={'500px'}>
+        <Wrapper>
           <div>체감온도:{weather?.feels}</div>
           <div>최고기온:{weather?.temp_max}</div>
           <div>최저기온:{weather?.temp_min}</div>
           <div>습도: {weather?.humidity}</div>
-        </WeatherWrapper>
+        </Wrapper>
       )}
     </div>
   );
