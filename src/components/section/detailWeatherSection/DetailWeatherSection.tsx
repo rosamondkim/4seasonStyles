@@ -6,8 +6,9 @@ const DetailWeatherSection = () => {
   const isLoading = weather === null;
 
   const date = new Date();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
+  const hours = ('0' + date.getHours()).slice(-2);
+  const minutes = ('0' + date.getMinutes()).slice(-2);
+  const timeStr = hours + ':' + minutes;
 
   if (error) {
     return <div>{error}</div>;
@@ -21,7 +22,8 @@ const DetailWeatherSection = () => {
         <Wrapper
           heightVal="170px"
           justifyContent="space-between"
-          heightValTab="356px;"
+          heightValTab="356px"
+          heightValWeb="264px"
         >
           <S.WeatherDiv>
             <div>체감온도:{weather?.feels}</div>
@@ -31,9 +33,7 @@ const DetailWeatherSection = () => {
           </S.WeatherDiv>
           <S.TimeDiv>
             <span>현재시각</span>
-            <div>
-              {hours}:{minutes}
-            </div>
+            <div>{timeStr}</div>
           </S.TimeDiv>
         </Wrapper>
       )}
