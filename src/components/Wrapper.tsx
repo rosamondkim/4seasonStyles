@@ -6,6 +6,7 @@ interface WrapperProps {
   widthVal?: string;
   heightVal?: string;
   heightValTab?: string;
+  heightValWeb?: string;
   backgroundImage?: string;
   isHover?: string;
   justifyContent?: string;
@@ -48,6 +49,6 @@ export const WrapperDiv = styled.div<WrapperProps>`
   @media (min-width: 1280px) {
     //웹
     padding: 5.5rem;
-    height: ${({ heightVal }) => heightVal ?? 'auto'};
+    height: ${({ heightValWeb }) => heightValWeb ?? 'auto'};
   }
 `;
