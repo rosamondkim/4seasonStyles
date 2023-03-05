@@ -1,8 +1,7 @@
 import * as S from './HomeStyle';
 import WeatherSection from 'components/section/weatherSection/WeatherSection';
 import useWeather from 'hooks/useWeather';
-
-
+import DetailWeatherSection from 'components/section/detailWeatherSection/DetailWeatherSection';
 
 const Home = () => {
   const { weather, error } = useWeather();
@@ -19,7 +18,8 @@ const Home = () => {
       ) : (
         <S.MainStyle weather={weather?.id}>
           <S.WhiteWrapper>
-            <WeatherSection/>
+            <WeatherSection />
+            <DetailWeatherSection />
           </S.WhiteWrapper>
         </S.MainStyle>
       )}
