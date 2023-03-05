@@ -28,7 +28,6 @@ export const Wrapper = styled.div`
   position: relative;
   z-index: 0;
   @media (min-width: 744px) {
-    //패드
     width: 347px;
     height: 336px;
   }
@@ -63,7 +62,7 @@ export const WeatherIcon = styled.div<WeatherIconProps>`
         return '#CCDBFD';
       } else if (weather === 800) {
         return '#FFCD2A';
-      } else  {
+      } else {
         return '#88A3E3';
       }
     }};
@@ -76,7 +75,7 @@ export const WeatherDesc = styled.h2`
 
 export const DiscWrapper = styled.div`
   text-align: center;
-  margin-left: 2.5rem;
+  margin-left: 1.5rem;
 `;
 
 export const AddressInfo = styled.h3`

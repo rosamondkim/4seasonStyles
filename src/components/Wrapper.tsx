@@ -5,8 +5,10 @@ import styled from 'styled-components';
 interface WrapperProps {
   widthVal?: string;
   heightVal?: string;
+  heightValTab?: string;
   backgroundImage?: string;
   isHover?: string;
+  justifyContent?: string;
   flexDirection?: string;
   children?: ReactNode;
 }
@@ -20,7 +22,7 @@ export default Wrapper;
 export const WrapperDiv = styled.div<WrapperProps>`
   // 모바일
   display: flex;
-  justify-content: center;
+  justify-content: ${({ justifyContent }) => justifyContent ?? 'center'};
   align-items: center;
   flex: 1;
   flex-direction: ${({ flexDirection }) => flexDirection ?? 'row'};
@@ -32,15 +34,16 @@ export const WrapperDiv = styled.div<WrapperProps>`
   border-radius: var(--sec-border-radius);
   position: relative;
   z-index: 0;
+  padding: 2.5rem;
+  margin-bottom: 1rem;
 
   &:hover {
     background: ${({ isHover }) => isHover ?? 'transparent'};
   }
   @media (min-width: 744px) {
     //패드
-    padding: 1.7rem;
-
-    height: ${({ heightVal }) => heightVal ?? 'auto'};
+    padding: 2rem;
+    height: ${({ heightValTab }) => heightValTab ?? 'auto'};
   }
   @media (min-width: 1280px) {
     //웹

@@ -1,7 +1,7 @@
 import * as S from './WeatherSectionStyle';
 import useWeather from '../../../hooks/useWeather';
 import Address from '../../Address';
-import WeatherWrapper from 'components/Wrapper';
+import Wrapper from 'components/Wrapper';
 
 const WeatherSection = () => {
   const { weather, error } = useWeather();
@@ -17,7 +17,7 @@ const WeatherSection = () => {
         <div>날씨정보 불러오는중</div>
       ) : (
         <>
-          <WeatherWrapper heightVal="267px">
+          <Wrapper heightVal="267px" heightValTab="356px;">
             <S.WeatherIcon
               backgroundImageUrl={weather?.icon}
               weather={weather?.id}
@@ -29,7 +29,7 @@ const WeatherSection = () => {
               <S.WeatherDesc>{weather?.description}</S.WeatherDesc>
               <S.Temp>{weather?.temperature.toFixed(1)}°</S.Temp>
             </S.DiscWrapper>
-          </WeatherWrapper>
+          </Wrapper>
         </>
       )}
     </div>

@@ -43,7 +43,9 @@ export const WhiteWrapper = styled.div`
   }
   @media (min-width: 744px) {
     //아이패드
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
     padding: 2rem;
   }
   // 웹
