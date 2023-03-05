@@ -12,6 +12,7 @@ interface Weather {
   description: string;
   icon: string;
   humidity: number;
+  id: number;
 }
 
 interface WeatherData {
@@ -50,6 +51,7 @@ function useWeather() {
           icon: WeatherImageMap[data.weather[0].id],
           humidity: data.main.humidity,
           description: WeatherDescription[data.weather[0].id].title,
+          id: data.weather[0].id,
         };
         setWeather(weather);
       }

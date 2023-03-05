@@ -1,11 +1,6 @@
-import React from 'react';
 import * as S from './WeatherSectionStyle';
 import useWeather from '../../../hooks/useWeather';
 import Address from '../../Address';
-
-type WeatherIconProps = {
-  backgroundImageUrl: string;
-};
 
 const WeatherSection = () => {
   const { weather, error } = useWeather();
@@ -18,10 +13,13 @@ const WeatherSection = () => {
   return (
     <div>
       {isLoading ? (
-        <div>Loading...</div>
+        <div>날씨정보 불러오는중</div>
       ) : (
         <S.Wrapper>
-          <S.WeatherIcon backgroundImageUrl={weather?.icon} />
+          <S.WeatherIcon
+            backgroundImageUrl={weather?.icon}
+            weather={weather?.id}
+          />
           <S.DiscWrapper>
             <S.AddressInfo>
               <Address />

@@ -1,24 +1,34 @@
 import styled from 'styled-components';
 
-export const MainStyle = styled.div`
+interface Color {
+  color: number;
+}
+
+export const MainStyle = styled.div<{ weather: number }>`
   // 모바일
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: var(--main-bg-color);
   padding: 1.4rem;
+  background-color: ${({ weather }) => {
+    if (weather < 600) {
+      return '#CCDBFD';
+    } else if (weather === 800) {
+      return '#FFCD2A';
+    } else if (weather < 802) {
+      return '#88A3E3';
+    }
+  }};
 
   @media (min-width: 744px) {
     // 패드
-    background-color: teal; //지워야함
     padding: 2.5rem;
   }
   @media (min-width: 1280px) {
     //웹
     padding: 1.4rem;
-    background-color: orange; //지워야함
   }
 `;
 

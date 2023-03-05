@@ -12,6 +12,7 @@ import styled from 'styled-components';
 
 type WeatherIconProps = {
   backgroundImageUrl: string;
+  weather: number;
 };
 
 export const Wrapper = styled.div`
@@ -57,7 +58,15 @@ export const WeatherIcon = styled.div<WeatherIconProps>`
     left: 10px;
     width: 86px;
     height: 86px;
-    background-color: var(--main-bg-color);
+    background-color: ${({ weather }) => {
+      if (weather < 600) {
+        return '#CCDBFD';
+      } else if (weather === 800) {
+        return '#FFCD2A';
+      } else if (weather < 802) {
+        return '#88A3E3';
+      }
+    }};
   }
 `;
 
