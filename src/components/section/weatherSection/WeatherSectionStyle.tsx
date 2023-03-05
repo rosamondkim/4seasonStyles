@@ -63,7 +63,7 @@ export const WeatherIcon = styled.div<WeatherIconProps>`
         return '#CCDBFD';
       } else if (weather === 800) {
         return '#FFCD2A';
-      } else if (weather < 802) {
+      } else  {
         return '#88A3E3';
       }
     }};
