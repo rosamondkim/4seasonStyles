@@ -7,7 +7,7 @@ interface WrapperProps {
   heightVal?: string;
   heightValTab?: string;
   heightValWeb?: string;
-  backgroundImage?: string;
+  background?: string;
   isHover?: string;
   justifyContent?: string;
   flexDirection?: string;
@@ -30,7 +30,7 @@ export const WrapperDiv = styled.div<WrapperProps>`
   width: 100%;
   height: ${({ heightVal }) => heightVal ?? 'auto'};
   background-color: var(--bg-color);
-  background-image: ${({ backgroundImage }) => backgroundImage ?? 'auto'};
+  background: ${({ background }) => background ?? 'auto'};
   box-shadow: var(--section-shadow);
   border-radius: var(--sec-border-radius);
   position: relative;
@@ -39,7 +39,7 @@ export const WrapperDiv = styled.div<WrapperProps>`
   margin-bottom: 1rem;
 
   &:hover {
-    background: ${({ isHover }) => isHover ?? 'transparent'};
+    background: ${({ isHover }) => isHover ?? 'auto'};
   }
   @media (min-width: 744px) {
     //패드
