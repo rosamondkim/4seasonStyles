@@ -21,6 +21,7 @@ const Home = () => {
           <S.WhiteWrapper>
             <WeatherSection />
             <DetailWeatherSection />
+
             <UmbrellaSection />
           </S.WhiteWrapper>
         </S.MainStyle>

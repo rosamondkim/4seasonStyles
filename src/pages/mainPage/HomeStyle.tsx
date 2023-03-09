@@ -45,6 +45,7 @@ export const WhiteWrapper = styled.div`
     //아이패드
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 
     gap: 2.5rem;
     padding: 2rem;
   }
