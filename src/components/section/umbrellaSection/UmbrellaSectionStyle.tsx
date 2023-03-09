@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Umbrella = styled.span`
+export const UmbrellaWrapper = styled.div`
   //모바일
   
   @media (min-width: 744px) {

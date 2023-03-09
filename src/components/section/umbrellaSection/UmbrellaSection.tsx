@@ -10,11 +10,13 @@ import * as S from './UmbrellaSectionStyle';
 const UmbrellaSection = () => {
   const [isTakeUmbrella, setIsTakeUmbrella] = useState(true);
   return (
-    <Wrapper>
+    <Wrapper
+      heightVal="170px"
+      background="url('img/umbrella.jpg') no-repeat center/100%"
+    >
       {isTakeUmbrella ? (
         <>
-          <span>눈 소식이 있습니다.</span>
-          <S.Umbrella>아 맞다 우산!</S.Umbrella>
+          <span>비온다</span>
         </>
       ) : (
         <span>맑다</span>
