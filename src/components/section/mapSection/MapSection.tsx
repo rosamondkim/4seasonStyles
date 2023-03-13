@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import useCurrentLocation from 'hooks/useCurrentLocation';
+import Wrapper from 'components/Wrapper';
+import { MAP_ICON } from 'styles/CommonIcon';
+import * as S from './MapSectionStyle';
 
 declare global {
   interface Window {
@@ -13,7 +16,8 @@ const Map = () => {
 
   const { kakao } = window;
 
-  useEffect(() => {
+  // useEffect(() => {
+  const onClickMap = () => {
     const kakaoMap = () => {
       if (!location) {
         return;
@@ -33,15 +37,19 @@ const Map = () => {
       }
     };
     kakaoMap();
-    setIsLoading(false);
-  }, [location]);
+    
+  };
+  // }, [location]);
 
-  return isLoading ? (
-    <div>지도정보 불러올 수 없음</div>
-  ) : (
-    <div>
-      <div id="mapDiv" style={{ width: '300px', height: '300px' }}></div>
-    </div>
+  // <div id="mapDiv" style={{ width: '300px', height: '300px' }}></div>
+
+  return (
+    <Wrapper>
+      <button onClick={onClickMap}>
+        <span>이동할 계획이 있으신가요?</span>
+        <img src={MAP_ICON} alt="지도아이콘" />
+      </button>
+    </Wrapper>
   );
 };
 
